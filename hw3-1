@@ -1,0 +1,23 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+N = 20
+k = 1
+a = 0.1
+b = 0.1
+Tc = 8*a/(27*b*k)
+print('Tc is', Tc)
+T = 4
+
+V = np.linspace(1.7, 10, 100)
+P = (N*k*T/(V-b*N))-N**2*a/(V**2)
+
+plt.figure()
+plt.plot(P, V, '-^r', label = 'T = 0.285')
+plt.xlabel('P(a.u.)')
+plt.ylabel('V(a.u.)')
+plt.title('problem1-1')
+plt.legend()
+
+plt.show()
