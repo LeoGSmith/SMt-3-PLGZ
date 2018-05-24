@@ -14,7 +14,7 @@ V = np.linspace(1.7, 10, 100)
 P = (N*k*T/(V-b*N))-N**2*a/(V**2)
 
 plt.figure()
-plt.plot(P, V, '-^r', label = 'T = 0.285')
+plt.plot(P, V, '-^r', label = 'T = 0.4')
 plt.xlabel('P(a.u.)')
 plt.ylabel('V(a.u.)')
 plt.title('problem1-1')
