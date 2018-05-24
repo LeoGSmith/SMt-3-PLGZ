@@ -1,0 +1,26 @@
+N = 10
+k = 1
+a = 0.1
+b = 0.1
+Tc = 8*a/(27*b*k)
+print('Tc is', Tc)
+T1 = 0.25
+T2 = Tc
+T3 = 0.6
+
+V = np.linspace(1.7, 10, 200)
+P1 = (N*k*T1/(V-b*N))-N**2*a/(V**2)
+P2 = (N*k*T2/(V-b*N))-N**2*a/(V**2)
+P3 = (N*k*T3/(V-b*N))-N**2*a/(V**2)
+
+plt.figure()
+plt.plot(P1, V, '-^r', label = 'T = 0.25')
+plt.plot(P2, V, '-^b', label = 'T = Tc')
+plt.plot(P3, V, '-^g', label = 'T = 0.6')
+
+plt.xlabel('P(a.u.)')
+plt.ylabel('V(a.u.)')
+plt.title('problem1-3')
+plt.legend()
+
+plt.show()
