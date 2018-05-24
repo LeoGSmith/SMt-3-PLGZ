@@ -1,0 +1,22 @@
+N = 12
+k = 1
+a = 0.1
+b = 0.1
+Tc = 8*a/(27*b*k)
+print('Tc is', Tc)
+T = 0.3
+V = np.linspace(1.7, 10, 100)
+P = (N*k*T/(V-b*N))-N**2*a/(V**2)
+
+Pi = np.linspace(0.3, 0.8, 100)
+Vi = N*k*T/Pi
+
+plt.figure()
+plt.plot(P, V, '-^r', label = 'Van der waals gas')
+plt.plot(Pi, Vi, '-*b', label = 'ideal gas')
+plt.xlabel('P(a.u.)')
+plt.ylabel('V(a.u.)')
+plt.title('problem1-2 at T = 0.285')
+plt.legend()
+
+plt.show()
